@@ -53,12 +53,29 @@ public class login extends HttpServlet {
 			ps.setString(1, uname);
 			ps.setString(2, pass);
 			ResultSet rs = ps.executeQuery();
-			String enteredPW = null;
+			String userPW = null;
 			while (rs.next()) {
-				enteredPW = rs.getString(1);
+				userPW = rs.getString(1);
 			}
-			if (enteredPW == null) nextPage = "loginfail.html";
-			else nextPage = "Home.html";
+			if (userPW == null) {
+				query = "SELECT E.Role FROM Employee E, Person P WHERE E.SSN = ? AND E.SSN = P.SSN AND P.Password = ?";
+				ps = c.prepareStatement(query);
+				ps.setString(1,uname);
+				ps.setString(2, pass);
+				rs = ps.executeQuery();
+				String empRole = null;
+				while (rs.next()) {
+					empRole = rs.getString(1);
+				}
+				if (empRole == null) {
+					nextPage = "loginfail.html";
+				}
+				else {
+					if (empRole.equals("Manager")) nextPage = "ManagerHome.jsp";
+					else nextPage = "CustRepHome.jsp";
+				}
+			}
+			else nextPage = "UserHome.html";
 			response.sendRedirect(nextPage);
 		} catch (SQLException e) {
 			e.printStackTrace();
