@@ -1,3 +1,5 @@
+
+
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -11,18 +13,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 /**
- * Servlet implementation class MailingListServlet
+ * Servlet implementation class EmployeeInfo
  */
-@WebServlet("/MailingListServlet")
-public class MailingListServlet extends HttpServlet {
+@WebServlet("/EmployeeInfo")
+public class EmployeeInfo extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MailingListServlet() {
+    public EmployeeInfo() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,17 +36,17 @@ public class MailingListServlet extends HttpServlet {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		Database db = new Database();
 		Connection c = db.getCon();
-		String query = "SELECT DISTINCT P.FirstName,P.LastName,P.Email FROM Person P, Profile Pr WHERE Pr.OwnerSSN = P.SSN ORDER BY LastName";
+		String query = "SELECT DISTINCT P.FirstName,P.LastName,P.Email,P.Telephone,E.Role FROM Person P, Employee E WHERE E.SSN = P.SSN ORDER BY LastName";
 		try {
 			Statement s = c.createStatement();
 			ResultSet rs = s.executeQuery(query);
-			ArrayList<MailingInfo>listing = new ArrayList<MailingInfo>();
+			ArrayList<EmployeeInf>listing = new ArrayList<EmployeeInf>();
 			while(rs.next()) {
-				MailingInfo inf = new MailingInfo(rs.getString(2),rs.getString(1),rs.getString(3));
+				EmployeeInf inf = new EmployeeInf(rs.getString(2),rs.getString(1),rs.getString(3),rs.getString(4),rs.getString(5));
 				listing.add(inf);
 			}
-			request.getSession().setAttribute("MailingList",listing);
-			request.getRequestDispatcher("mailingList.jsp").forward(request, response);
+			request.setAttribute("EmployeeList",listing);
+			getServletContext().getRequestDispatcher("/EmployeeInfo.jsp").forward(request, response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -59,18 +60,42 @@ public class MailingListServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-	
-	private class MailingInfo {
+
+	public class EmployeeInf{
+		
 		public String lastname;
 		public String firstname;
 		public String address;
+		public String telephone;
+		public String role;
 		
-		private MailingInfo(String lastname,String firstname,String address) {
+		private EmployeeInf(String lastname,String firstname,String address,String telephone, String role) {
 			this.lastname = lastname;
 			this.firstname=firstname;
 			this.address=address;
+			this.telephone=telephone;
+			this.role=role;
+		}
+		
+		public String getLast() {
+			return lastname;
+		}
+		
+		public String getFirst() {
+			return firstname;
+		}
+		
+		public String address() {
+			return address;
+		}
+		
+		public String telephone() {
+			return telephone;
+		}
+		
+		public String role() {
+			return role;
 		}
 
 	}
-
 }

@@ -16,7 +16,10 @@
 		<br>
 		<button type="submit" formaction="MailingList" method="get">Customer Mailing Lists</button><br>
 		<br>
-		<button type="submit" formaction="dateSuggestions.jsp">Suggested Dates by Profile</button>
+		<button type="submit" formaction="dateSuggestions.jsp">Suggested Dates by Profile</button><br>
+		<br>
+		<button type="submit" formaction="EmployeeInfo" method="get">Employee Information</button><br>
+		<br>
 	</form>
 	
 </body>
