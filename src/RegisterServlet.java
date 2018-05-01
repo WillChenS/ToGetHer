@@ -108,7 +108,7 @@ public class RegisterServlet extends HttpServlet {
 			System.out.println("Row count affected= " + rowcount);
 			response.sendRedirect("processRegister.jsp");
 			
-		} catch (ClassNotFoundException | SQLException e) {
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 //			response.sendRedirect("loginfail.html");
 			e.printStackTrace();

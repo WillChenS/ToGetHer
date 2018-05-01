@@ -8,17 +8,26 @@ public class Database {
 	String username = "bchowdhury";
 	String password = "110817284";
 	
-	public static Connection getCon() throws SQLException, ClassNotFoundException {
+	public static Connection getCon() {
 		Connection conn;
 		String hostName = "mysql4.cs.stonybrook.edu";
 		String dbName = "bchowdhury";
 		String username = "bchowdhury";
 		String password = "110817284";
 		
-		Class.forName("com.mysql.jdbc.Driver");
 		String connectionURL = "jdbc:mysql://" + hostName + ":3306/" + dbName;
+		try {
+		Class.forName("com.mysql.jdbc.Driver");
 		conn = DriverManager.getConnection(connectionURL,username,password);
 		return conn;
-		
+		}
+		catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
 	}
 }

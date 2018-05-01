@@ -43,8 +43,7 @@ public class SuggestDates extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		Database db = new Database();
-		Connection c = db.getCon();
+		Connection c = Database.getCon();
 		String profile = request.getParameter("profile");
 		String query = "SELECT profile1,User1Rating,user2rating " + 
 				"FROM date,profile " + 
