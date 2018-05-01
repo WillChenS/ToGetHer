@@ -69,7 +69,7 @@ public class login extends HttpServlet {
 					empRole = rs.getString(1);
 				}
 				if (empRole == null) {
-					nextPage = "loginfail.html";
+					nextPage = "loginfail.jsp";
 				}
 				else {
 					if (empRole.equals("Manager")) {
