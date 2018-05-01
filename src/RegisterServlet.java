@@ -67,9 +67,7 @@ public class RegisterServlet extends HttpServlet {
 		try {
 			Connection c = Database.getCon();
 			System.out.println("Connected");
-			String sql = "INSERT INTO account VALUES (?, ?, ?, ?); \n"
-						 + "INSERT INTO person VALUES (?,?,?,?,?,?,?,?,?,?); \n"
-						 + "INSERT INTO profile VALUES (?,?,?,?,?,?,?,?,?,?,?,?); \n";
+			String sql = "INSERT INTO (account,person,profile) VALUES (?, ?, ?, ?),(?, ?, ?, ?),(?, ?, ?, ?)";
 			
 			for(String h: hobArray) {
 				sql = sql + "INSERT INTO Hobbies VALUES('" + profileID + "','" + h + "'); \n";	
