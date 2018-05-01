@@ -18,7 +18,7 @@
 		<br>
 		<button type="submit" formaction="dateSuggestions.jsp">Suggested Dates by Profile</button><br>
 		<br>
-		<button type="submit" formaction="EmployeeInfo" method="get">Employee Information</button><br>
+		<button type="submit" formaction="EmployeeInfo" method="get">Employee Directory</button><br>
 		<br>
 	</form>
 	
