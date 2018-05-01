@@ -8,7 +8,7 @@
 <title>Customer Mailing List</title>
 </head>
 <body>
-<h3>Mailing List</h3>
+<h3>Customer Mailing List</h3>
 <table>
 	<thead>
 		<tr>
