@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
+import java.sql.Statement;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletOutputStream;
@@ -67,44 +67,65 @@ public class RegisterServlet extends HttpServlet {
 		try {
 			Connection c = Database.getCon();
 			System.out.println("Connected");
-			String sql = "INSERT INTO account VALUES (?, ?, ?, ?); \n"
-						 + "INSERT INTO person VALUES (?,?,?,?,?,?,?,?,?,?); \n"
-						 + "INSERT INTO profile VALUES (?,?,?,?,?,?,?,?,?,?,?,?); \n";
 			
-			for(String h: hobArray) {
-				sql = sql + "INSERT INTO Hobbies VALUES('" + profileID + "','" + h + "'); \n";	
-			}
-			System.out.println(sql);
+			String sql = "INSERT INTO person VALUES (?,?,?,?,?,?,?,?,?,?);";
 			
 			PreparedStatement ps = c.prepareStatement(sql);
+			ps.setString(1, ssn);
+			ps.setString(2, password);
+			ps.setString(3,firstName);
+			ps.setString(4,lastName);
+			ps.setString(5, addresses[0]);
+			ps.setString(6, addresses[1]);
+			ps.setString(7, addresses[2]);
+			ps.setInt(8, Integer.parseInt(addresses[3]));
+			ps.setString(9, email);
+			ps.setString(10, phone);
+			
+			int rowcount = ps.executeUpdate();
+			System.out.println("Final insert Statement: \n" + ps);
+			System.out.println("Row count affected= " + rowcount);
+			
+			sql = "INSERT INTO user(SSN) VALUES ((SELECT SSN from person WHERE SSN =" +ssn + "))";
+			Statement st = c.createStatement();
+			
+			rowcount = st.executeUpdate(sql);
+			
+			sql = "INSERT INTO account VALUES (?, ?, ?, ?);";
+			
+//			for(String h: hobArray) {
+//				sql = sql + "INSERT INTO Hobbies VALUES('" + profileID + "','" + h + "');";	
+//			}
+			System.out.println(sql);
+			
+			ps = c.prepareStatement(sql);
 			ps.setString(1,ssn);
 			ps.setInt(2, Integer.parseInt(cardNumber));
 			ps.setString(3, userName);
 			ps.setDate(4, sqlDate);
-			ps.setString(5, ssn);
-			ps.setString(6, password);
-			ps.setString(7,firstName);
-			ps.setString(8,lastName);
-			ps.setString(9, addresses[0]);
-			ps.setString(10, addresses[1]);
-			ps.setString(11, addresses[2]);
-			ps.setInt(12, Integer.parseInt(addresses[3]));
-			ps.setString(13, email);
-			ps.setString(14, phone);
-			ps.setString(15, profileID);
-			ps.setString(16, ssn);
-			ps.setInt(17, Integer.parseInt(dRangeMin));
-			ps.setInt(18, Integer.parseInt(dRangeMax));
-			ps.setInt(19, Integer.parseInt(geoRange));
-			ps.setString(20, gender);
-			ps.setInt(21, Integer.parseInt(height));
-			ps.setInt(22, Integer.parseInt(weight));
-			ps.setString(23, hairColor);
-			ps.setTimestamp(24, sqlDT);
-			ps.setTimestamp(25, sqlDT);
-			ps.setInt(26, Integer.parseInt(age));
+			
+			rowcount = ps.executeUpdate();
 			System.out.println("Final insert Statement: \n" + ps);
-			int rowcount = ps.executeUpdate();
+			System.out.println("Row count affected= " + rowcount);
+					
+			
+			sql = "INSERT INTO profile VALUES (?,?,?,?,?,?,?,?,?,?,?,?);";
+			
+			ps = c.prepareStatement(sql);
+			ps.setString(1, profileID);
+			ps.setString(2, ssn);
+			ps.setInt(3, Integer.parseInt(dRangeMin));
+			ps.setInt(4, Integer.parseInt(dRangeMax));
+			ps.setInt(5, Integer.parseInt(geoRange));
+			ps.setString(6, gender);
+			ps.setInt(7, Integer.parseInt(height));
+			ps.setInt(8, Integer.parseInt(weight));
+			ps.setString(9, hairColor);
+			ps.setTimestamp(10, sqlDT);
+			ps.setTimestamp(11, sqlDT);
+			ps.setInt(12, Integer.parseInt(age));
+			System.out.println("Final insert Statement: \n" + ps);
+			rowcount = ps.executeUpdate();
 			System.out.println("Row count affected= " + rowcount);
 			response.sendRedirect("processRegister.jsp");
 			
