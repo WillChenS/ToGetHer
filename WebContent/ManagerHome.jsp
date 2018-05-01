@@ -31,7 +31,7 @@
 		<br>
 		<button type="submit" formaction="HighRatedCusServlet" method="get">Produce a list of the highest-rated customers</button><br>
 		<br>
-		<button type="submit" formaction="MailingList" method="get">Produce a list of the highest-rated calendar dates to have a date on</button><br>
+		<button type="submit" formaction="HighRatedDateServlet" method="get">Produce a list of the highest-rated calendar dates to have a date on</button><br>
 		<br>
 		
 </body>
