@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 /WelcomeServlet.class
 /DefaultServlet.class
 /testservlet.class
 /RegisterServlet.class
+=======
+/EmployeeInfo.class
+/EmployeeInfo$EmployeeInf.class
+/SuggestDates.class
+>>>>>>> 79580715edc5b1cc7f88d7531b90309ae7ed2254
