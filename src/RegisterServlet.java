@@ -57,7 +57,7 @@ public class RegisterServlet extends HttpServlet {
 	    String hobbies = request.getParameter("hobbies");
 	 
 	    
-	    String[] hobArray = hobbies.split(" ");
+	    String[] hobArray = hobbies.split(",");
 	    java.util.Date date = new java.util.Date();
 	    java.sql.Date sqlDate = new java.sql.Date(date.getTime());
 	    java.sql.Timestamp sqlDT = new java.sql.Timestamp(date.getTime());
@@ -86,17 +86,27 @@ public class RegisterServlet extends HttpServlet {
 			System.out.println("Final insert Statement: \n" + ps);
 			System.out.println("Row count affected= " + rowcount);
 			
-			sql = "INSERT INTO user(SSN) VALUES ((SELECT SSN from person WHERE SSN =" +ssn + "))";
-			Statement st = c.createStatement();
+			System.out.println(ssn);
 			
-			rowcount = st.executeUpdate(sql);
+			sql = "INSERT INTO user(SSN) VALUES (?)";
+			ps = c.prepareStatement(sql);
+			ps.setString(1, ssn);
 			
+			
+			rowcount = ps.executeUpdate();
+			
+			sql = "INSERT INTO Hobbies VALUES(?,?);";
+			ps = c.prepareStatement(sql);
+			for(String h: hobArray) {
+				ps.setString(1, profileID);
+				ps.setString(2, h);
+				rowcount = ps.executeUpdate();
+			}	
+			
+			
+			System.out.println(sql);
 			sql = "INSERT INTO account VALUES (?, ?, ?, ?);";
 			
-//			for(String h: hobArray) {
-//				sql = sql + "INSERT INTO Hobbies VALUES('" + profileID + "','" + h + "');";	
-//			}
-			System.out.println(sql);
 			
 			ps = c.prepareStatement(sql);
 			ps.setString(1,ssn);
@@ -131,8 +141,8 @@ public class RegisterServlet extends HttpServlet {
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-//			response.sendRedirect("loginfail.html");
-			e.printStackTrace();
+			response.sendRedirect("loginfail.html");
+			
 		}
 		
 	}
