@@ -10,7 +10,7 @@
 
 <h1>Customer Representative Home</h1>
 	<form action="recordDate.jsp" method= "post">
-		<button type="submit">Record a Date</button><br>
+		<button type="submit" formaction="recordDate.jsp">Record a Date</button><br>
 		<br>
 		<button type="submit" formaction="alterCustInfo.jsp">Add, Edit, or Delete Customer Info</button><br>
 		<br>
