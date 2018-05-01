@@ -43,13 +43,14 @@ public class login extends HttpServlet {
 		doGet(request, response);
 		String uname = request.getParameter("uname");
 		String pass = request.getParameter("pass");
-		Database db = new Database();
-		Connection c = db.getCon();
+		try {
+		Connection c = Database.getCon();
+	
 		PreparedStatement ps = null;
 		String nextPage = null;
 		String query = "SELECT P.Password FROM Profile Pr, Person P WHERE Pr.ProfileID = ? AND Pr.OwnerSSN = P.SSN AND P.Password = ?";
-		try {
-			ps = c.prepareStatement(query);
+		
+		ps = c.prepareStatement(query);
 			ps.setString(1, uname);
 			ps.setString(2, pass);
 			ResultSet rs = ps.executeQuery();
@@ -77,7 +78,7 @@ public class login extends HttpServlet {
 			}
 			else nextPage = "UserHome.html";
 			response.sendRedirect(nextPage);
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}

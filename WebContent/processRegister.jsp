@@ -7,7 +7,7 @@
 <title>Form Processing</title>
 </head>
 <body>
-  <h3>Parameter values:</h3>
+  <h3>Successfully Updated Parameter values:</h3>
   <%
     String userName = request.getParameter("userName");
     String password = request.getParameter("password");
@@ -33,7 +33,9 @@
  
      Address: <%=address %> <br>
   
-  <% } } %>
+  <% } } %>	
+  
+  <button type="submit" formaction="RegisterServlet"> Confirm </button>
   
 </body>
 </html>
