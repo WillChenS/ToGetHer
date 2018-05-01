@@ -33,8 +33,7 @@ public class MailingList extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		Database db = new Database();
-		Connection c = db.getCon();
+		Connection c = Database.getCon();
 		String query = "SELECT DISTINCT P.FirstName,P.LastName,P.Email FROM Person P, Profile Pr WHERE Pr.OwnerSSN = P.SSN ORDER BY LastName";
 		try {
 			Statement s = c.createStatement();
