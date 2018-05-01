@@ -15,7 +15,7 @@
 		<br>
 		<button type="submit" formaction="MailingList" method="get">Obtain a sales report for a particular month</button><br>
 		<br>
-		<button type="submit" formaction="MailingList" method="get">Produce a comprehensive listing of all users</button><br>
+		<button type="submit" formaction="ListAllUserServlet" method="get">Produce a comprehensive listing of all users</button><br>
 		<br>
 		<button type="submit" formaction="MailingList" method="get">Produce a list of dates by calendar date or by customer name</button><br>
 		<br>
