@@ -52,7 +52,7 @@ public class RecordDate extends HttpServlet {
 		String user2rating = request.getParameter("user2rating");
 		String query = "INSERT INTO date (Profile1, Profile2," + 
 				"CustRep, Date_Time, Location, BookingFee," + 
-				"Comments, User1Rating, User2Rating)(?,?,?,?,?,?,?,?,?)";
+				"Comments, User1Rating, User2Rating) VALUES (?,?,?,?,?,?,?,?,?)";
 		PreparedStatement ps = null;
 		try {
 			ps = c.prepareStatement(query);
@@ -65,7 +65,7 @@ public class RecordDate extends HttpServlet {
 			ps.setString(7, comments);
 			ps.setString(8, user1rating);
 			ps.setString(9, user2rating);
-			ps.executeQuery();
+			ps.executeUpdate();
 			request.setAttribute("return", "Successfully added date.");
 			request.getRequestDispatcher("/recordDate.jsp").forward(request, response);
 		} catch (SQLException e) {
