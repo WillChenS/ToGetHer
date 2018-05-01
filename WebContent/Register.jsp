@@ -16,7 +16,7 @@
 		<hr>
 		SSN: <input type = "text" name = "SSN" value ="">
 		<br>
-		Card Number: <input type = "text" name = "cardNumber" value = "">
+		Card Number: <input type = "number" name = "cardNumber" value = "">
 		
 		<hr>
 		<h5> Personal Info </h5>
@@ -33,9 +33,9 @@
 		<input type="text" name="address" size="50" value="Street">
 		<input type="text" name="address" size="50" value="City">
 		<input type="text" name="address" size="50" value="State">
-		<input type="text" name="address" size="5" value="Zip">
+		<input type="number" name="address" size="5" value="Zip">
 		<br>
-		Email: <input type="text" name="email" value="">
+		Email: <input type="email" name="email" value="">
 		<br>
 		Phone Number: <input type="text" name="phoneNumber" value="">
 		<hr>
@@ -51,9 +51,9 @@
 		<br>
 		Geo Range: <input type="number" name="geoRange" value="">
 		<br>
-		Height: <input type="text" name="height" value="">
+		Height: <input type="number" name="height" value="">
 		<br>
-		Weight: <input type="text" name="weight" value="">
+		Weight: <input type="number" name="weight" value="">
 		<br>
 		Hair Color: <input type="text" name="hairColor" value="">
 		<br>
