@@ -72,11 +72,23 @@ public class login extends HttpServlet {
 					nextPage = "loginfail.html";
 				}
 				else {
-					if (empRole.equals("Manager")) nextPage = "ManagerHome.jsp";
-					else nextPage = "CustRepHome.jsp";
+					if (empRole.equals("Manager")) {
+						nextPage = "ManagerHome.jsp";
+						request.getSession().setAttribute("Role","Manager");
+						request.getSession().setAttribute("ID", uname);
+					}
+					else {
+						nextPage = "CustRepHome.jsp";
+						request.getSession().setAttribute("Role","Employee");
+						request.getSession().setAttribute("ID", uname);
+					}
 				}
 			}
-			else nextPage = "UserHome.html";
+			else {
+				nextPage = "UserHome.jsp";
+				request.getSession().setAttribute("Role","Customer");
+				request.getSession().setAttribute("ID", uname);
+			}
 			response.sendRedirect(nextPage);
 		} catch (Exception e) {
 			e.printStackTrace();
