@@ -12,7 +12,7 @@
 	<form action="login" method= "post">
 	<pre>
 	<input type = "text" name = "uname" placeholder = "username"/>
-	<input type = "text" name = "pass" placeholder = "password"/>
+	<input type = "password" name = "pass" placeholder = "password"/>
 	<input type = "submit" value = "Login"/>
 	</pre>
 	</form>
