@@ -13,7 +13,7 @@
 
 	<button type="submit" formaction="MailingList" method="get">Add </button><br>
 		<br>
-		<button type="submit" formaction="MailingList" method="get">Obtain a sales report for a particular month</button><br>
+		<button type="submit" formaction="SaleReportServlet" method="get">Obtain a sales report for a particular month</button><br>
 		<br>
 		<button type="submit" formaction="ListAllUserServlet" method="get">Produce a comprehensive listing of all users</button><br>
 		<br>
