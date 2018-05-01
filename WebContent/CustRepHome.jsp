@@ -14,7 +14,7 @@
 		<br>
 		<button type="submit" formaction="alterCustInfo.jsp">Add, Edit, or Delete Customer Info</button><br>
 		<br>
-		<button type="submit" formaction="mailingList.jsp">Customer Mailing Lists</button><br>
+		<button type="submit" formaction="MailingList" method="get">Customer Mailing Lists</button><br>
 		<br>
 		<button type="submit" formaction="dateSuggestions.jsp">Suggested Dates by Profile</button>
 	</form>

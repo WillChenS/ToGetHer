@@ -15,14 +15,14 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class MailingListServlet
  */
-@WebServlet("/MailingListServlet")
-public class MailingListServlet extends HttpServlet {
+@WebServlet("/MailingList")
+public class MailingList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MailingListServlet() {
+    public MailingList() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -44,8 +44,8 @@ public class MailingListServlet extends HttpServlet {
 				MailingInfo inf = new MailingInfo(rs.getString(2),rs.getString(1),rs.getString(3));
 				listing.add(inf);
 			}
-			request.getSession().setAttribute("MailingList",listing);
-			request.getRequestDispatcher("mailingList.jsp").forward(request, response);
+			request.setAttribute("MailingList",listing);
+			getServletContext().getRequestDispatcher("/mailingList.jsp").forward(request, response);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -60,7 +60,7 @@ public class MailingListServlet extends HttpServlet {
 		doGet(request, response);
 	}
 	
-	private class MailingInfo {
+	public class MailingInfo {
 		public String lastname;
 		public String firstname;
 		public String address;
@@ -69,6 +69,18 @@ public class MailingListServlet extends HttpServlet {
 			this.lastname = lastname;
 			this.firstname=firstname;
 			this.address=address;
+		}
+		
+		public String getLast() {
+			return lastname;
+		}
+		
+		public String getFirst() {
+			return firstname;
+		}
+		
+		public String address() {
+			return address;
 		}
 
 	}

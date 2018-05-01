@@ -5,20 +5,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Mailing List</title>
+<title>Customer Mailing List</title>
 </head>
 <body>
 <h3>Mailing List</h3>
 <table>
-	<c:forEach items="${FIRSTNAME}" var="firstname" varStatus="loop">
-		<c:set var="address" value="${ADDRESS[loop.index]}" />
-		<c:set var="lastname" value="${LASTNAME[loop.index]}" />
+	<thead>
 		<tr>
-			<td><c:out value="${lastname}" /></td>
-			<td><c:out value="${firstname}"/></td>
-			<td><c:out value="${address}"/></td>
-		</tr>	
-	</c:forEach>
+			<th>Last Name</th>
+			<th>First Name</th>
+			<th>Email Address</th>
+		</tr>
+	</thead>
+	<tbody>
+		<c:forEach var="mailEntry" items="${MailingList}">
+		<tr>
+			<td><c:out value = "${mailEntry.getLast()}"/></td>
+			<td><c:out value = "${mailEntry.getFirst()}"/></td>
+			<td><c:out value = "${mailEntry.address()}"/></td>
+		</tr>
+		</c:forEach>
+	</tbody>
 </table>
 </body>
 </html>
