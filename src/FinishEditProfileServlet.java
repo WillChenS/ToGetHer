@@ -1,6 +1,10 @@
 
 
 import java.io.IOException;
+
+import java.time.format.DateTimeFormatter;  
+import java.time.LocalDateTime;    
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -44,6 +48,8 @@ public class FinishEditProfileServlet extends HttpServlet {
 		String selectedCol = request.getParameter("selectedCol");
 		String newValue = request.getParameter("newValue");
 		String toDelete = request.getParameter("delete");
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-mm-dd HH:mm:ss");
+		String updateTime = dtf.format(LocalDateTime.now());
 		Connection c = Database.getCon();
 		String query;
 		if (toDelete != null && toDelete.equals("DELETE")) {
@@ -54,6 +60,10 @@ public class FinishEditProfileServlet extends HttpServlet {
 		try {
 			ps = c.prepareStatement(query);
 			ps.setString(1, newValue);
+			ps.executeUpdate();
+			query = "UPDATE profile SET LastModDate=?";
+			ps = c.prepareStatement(query);
+			ps.setString(1, updateTime);
 			ps.executeUpdate();
 			request.setAttribute("returnStatement", "Successfully updated.");
 			request.getRequestDispatcher("/custInfoUpdated.jsp").forward(request, response);

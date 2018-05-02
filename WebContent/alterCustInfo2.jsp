@@ -18,11 +18,12 @@
     </c:forEach>
     
     <br><br>
+    
     Select an attribute to change, or check delete to delete the attribute:
     <form action="FinishEditProfileServlet" method="post">
 		<input type="hidden" name="profileID" value="${attributes.get(0)}" />
         <select name="selectedCol">
-            <c:forEach var="colName" items="${colNames}">
+            <c:forEach var="colName" items="${Selectables}">
                 <option value="${colName}">${colName}</option>
             </c:forEach>
         </select>

@@ -61,11 +61,14 @@ public class EditProfileServlet extends HttpServlet {
 			request.setAttribute("attributes", attributes);
 			
 			ArrayList<String> colNames = new ArrayList<String>();
+			ArrayList<String> selectables = new ArrayList<String>();
 			ResultSetMetaData r = rs.getMetaData();
 			for (int i = 1; i <= r.getColumnCount(); i++) {
 				colNames.add(r.getColumnName(i));
+				if (i != 11) selectables.add(r.getColumnName(i));
 			}
 			request.setAttribute("colNames",colNames);
+			request.setAttribute("Selectables", selectables);
 			
 			request.getRequestDispatcher("alterCustInfo2.jsp").forward(request,response);
 		} catch (SQLException e) {
