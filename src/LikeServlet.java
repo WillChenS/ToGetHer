@@ -53,7 +53,7 @@ public class LikeServlet extends HttpServlet {
 			System.out.println("liked");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			request.getSession().setAttribute("Msg", "The profile ID was wrong");
+			request.getSession().setAttribute("Msg", "The profile ID was wrong or already liked");
 			response.sendRedirect("Like.jsp");
 		}
 		
