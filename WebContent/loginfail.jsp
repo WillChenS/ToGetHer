@@ -6,9 +6,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>ToGetHer Dating</title>
 </head>
-<body>
+<body style="font-size: 12pt; text-align: center" bgcolor="#FBD6CB"> 
+    <span style="font-family: Arial"><strong><span style="font-size: 20pt">Login in Page</span><br />
+        <br />
+  
 
-<h1>Login Page</h1>
 	<form action="login" method= "post">
 	<pre>
 	<input type = "text" name = "uname" placeholder = "username"/>
