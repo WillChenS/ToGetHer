@@ -18,7 +18,7 @@
     </c:forEach>
     
     <br><br>
-    Select an attribute to change, or check delete to delete the profile:
+    Select an attribute to change, or check delete to delete the attribute:
     <form action="FinishEditProfileServlet" method="post">
 		<input type="hidden" name="profileID" value="${attributes.get(0)}" />
         <select name="selectedCol">
