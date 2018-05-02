@@ -76,7 +76,8 @@ public class SrchProServlet extends HttpServlet {
 					request.setAttribute("ProfileID"+s, rs.getString(1));
 					request.setAttribute("Height"+s, rs.getInt(2));
 					request.setAttribute("Weight"+s, rs.getInt(3));
-					request.setAttribute("HairColor"+c, rs.getString(4));	
+					request.setAttribute("HairColor"+s, rs.getString(4));	
+					request.setAttribute("Age"+s, rs.getInt(5));
 					System.out.println(rs.getString(1));
 				}
 				request.setAttribute("length", s);
