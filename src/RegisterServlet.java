@@ -63,9 +63,9 @@ public class RegisterServlet extends HttpServlet {
 	    java.sql.Timestamp sqlDT = new java.sql.Timestamp(date.getTime());
 	    
 	    System.out.println("Variables");
-	    
+	    Connection c = Database.getCon();
 		try {
-			Connection c = Database.getCon();
+			c.setAutoCommit(false);
 			System.out.println("Connected");
 			
 			String sql = "INSERT INTO person VALUES (?,?,?,?,?,?,?,?,?,?);";
@@ -137,12 +137,20 @@ public class RegisterServlet extends HttpServlet {
 			System.out.println("Final insert Statement: \n" + ps);
 			rowcount = ps.executeUpdate();
 			System.out.println("Row count affected= " + rowcount);
+			c.commit();
+			
 			response.sendRedirect("processRegister.jsp");
 			
-		} catch (SQLException e) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			response.sendRedirect("loginfail.html");
-			
+			try {
+				c.rollback();
+			} catch (SQLException e1) {
+				response.sendRedirect("Error.html");
+			}
+			request.getSession().setAttribute("Msg", "Some value was wrong. Please try again");
+			response.sendRedirect("Register.jsp");
+		
 		}
 		
 	}

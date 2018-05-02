@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -6,6 +7,9 @@
 </head>
 <body>
 	<h3> Get Started with an Account </h3>
+	<h5><c:out value="${sessionScope.Msg}"/>	</h5>
+	
+	
 	<div style = "border:1px solid $D0D0D0;width:400px;padding:10px;" >
 	
 	<form method = "GET" action = "RegisterServlet">
