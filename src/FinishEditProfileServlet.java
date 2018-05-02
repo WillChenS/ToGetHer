@@ -43,8 +43,15 @@ public class FinishEditProfileServlet extends HttpServlet {
 		String profileID = request.getParameter("profileID");
 		String selectedCol = request.getParameter("selectedCol");
 		String newValue = request.getParameter("newValue");
+		String toDelete = request.getParameter("delete");
 		Connection c = Database.getCon();
-		String query = "UPDATE profile SET " + selectedCol + " = " + newValue + " WHERE ProfileID = \"" + profileID + "\"";
+		String query;
+		if (toDelete.equals("DELETE")) {
+			query = "DELETE FROM profile WHERE ProfileID = \"" + profileID + "\"";
+		}
+		else {
+			query = "UPDATE profile SET " + selectedCol + " = " + newValue + " WHERE ProfileID = \"" + profileID + "\"";
+		}
 		PreparedStatement ps;
 		try {
 			ps = c.prepareStatement(query);
