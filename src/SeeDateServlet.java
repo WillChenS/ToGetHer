@@ -33,7 +33,7 @@ public class SeeDateServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		System.out.println("Seedate opened");
+
 		String profId = request.getSession().getAttribute("ID").toString();
 		
 		Connection c = Database.getCon();
@@ -44,7 +44,6 @@ public class SeeDateServlet extends HttpServlet {
 			ps.setString(2, profId);
 			ResultSet rs = ps.executeQuery();
 			
-			System.out.println("Query successful");
 			int suffix = 0;
 			while(rs.next()) {
 			suffix++;
@@ -57,7 +56,6 @@ public class SeeDateServlet extends HttpServlet {
 			request.setAttribute("u1Rating"+suffix, rs.getInt(8));
 			request.setAttribute("u2Rating"+suffix, rs.getInt(9));
 			request.setAttribute("geoLoc"+suffix, rs.getString(10));
-			System.out.println(rs.getString(1));
 			}
 			request.setAttribute("length", suffix);
 			
