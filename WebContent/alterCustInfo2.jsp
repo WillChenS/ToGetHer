@@ -28,7 +28,7 @@
         </select>
         <input type="text" name="newValue" placeholder="Updated Value">
         <input type="submit" value="Submit" align="middle"> 
-        <label></label><input type="checkbox" name="delete" value="DELETE">Delete Profile</label>
+        <label></label><input type="checkbox" name="delete" value="DELETE">Delete</label>
     </form>
     
 
