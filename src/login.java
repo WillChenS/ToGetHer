@@ -48,7 +48,7 @@ public class login extends HttpServlet {
 	
 		PreparedStatement ps = null;
 		String nextPage = null;
-		String query = "SELECT P.Password FROM Profile Pr, Person P WHERE Pr.ProfileID = ? AND Pr.OwnerSSN = P.SSN AND P.Password = ?";
+		String query = "SELECT P.Password FROM Account A, Person P WHERE A.AcctNum = ? AND A.OwnerSSN = P.SSN AND P.Password = ?";
 		
 		ps = c.prepareStatement(query);
 			ps.setString(1, uname);
