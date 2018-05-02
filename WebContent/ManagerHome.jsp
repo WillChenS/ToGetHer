@@ -29,7 +29,7 @@
 		<br>
 		<button type="submit" formaction="MostActiveCusServlet" method="get">Produce a list of most active customers</button><br>
 		<br>
-		<button type="submit" formaction="MailingList" method="get">Produce a list of all customers who have dated a particular customer</button><br>
+		<button type="submit" formaction="DatedServlet" method="get">Produce a list of all customers who have dated a particular customer</button><br>
 		<br>
 		<button type="submit" formaction="HighRatedCusServlet" method="get">Produce a list of the highest-rated customers</button><br>
 		<br>
