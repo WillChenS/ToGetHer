@@ -49,7 +49,7 @@ public class HighRatedProfiles extends HttpServlet {
     		ResultSet rs = s.executeQuery(query);
     		ArrayList<HighRatedCusInfo>listing = new ArrayList<HighRatedCusInfo>();
     		while(rs.next()) {
-    			HighRatedCusInfo inf = new HighRatedCusInfo(rs.getString(1),rs.getString(2),rs.getString(3));
+    			HighRatedCusInfo inf = new HighRatedCusInfo(rs.getString(1),rs.getString(2));
     			System.out.print(rs.getString(1));
     			listing.add(inf);
     		}
@@ -72,20 +72,16 @@ public class HighRatedProfiles extends HttpServlet {
 public class HighRatedCusInfo {
 
 	public String FirstName;
-	public String LastName;
 	public String rating;
 	
 	
-	private HighRatedCusInfo(String c,String d,String a) {
+	private HighRatedCusInfo(String c,String a) {
 
 		this.FirstName = c;
-		this.LastName = d;
 		this.rating = a;
 	}
 	public String getFirstName() {
 		return FirstName;
-	}public String getLastName() {
-		return LastName;
 	}public String getrating() {
 		return rating;
 	}
