@@ -36,6 +36,7 @@ Your session ID:
 	<button type= "submit" formaction="PersonalizedSuggestion" method="get"> See Personalized date suggestion list </button><br>
 	<hr>
 	</form>
+	<h5><c:out value="${sessionScope.errorMsg}"/>	</h5>
 </div>	
 </body>
 </html>

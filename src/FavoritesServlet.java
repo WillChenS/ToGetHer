@@ -14,16 +14,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class SeeDateServlet
+ * Servlet implementation class FavoritesServlet
  */
-@WebServlet("/SeeDateServlet")
-public class SeeDateServlet extends HttpServlet {
+@WebServlet("/FavoritesServlet")
+public class FavoritesServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SeeDateServlet() {
+    public FavoritesServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,42 +33,32 @@ public class SeeDateServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-
-		String profId = request.getSession().getAttribute("ID").toString();
-		
 		Connection c = Database.getCon();
-		String sql = "SELECT * FROM date WHERE Profile1 = ? or Profile2 = ?";
+		String liker = request.getParameter("profile");
+		String sql = "SELECT Likee FROM likes WHERE Liker = ?";
+		
 		try {
 			PreparedStatement ps = c.prepareStatement(sql);
-			ps.setString(1, profId);
-			ps.setString(2, profId);
+			ps.setString(1, liker);
+			
 			ResultSet rs = ps.executeQuery();
 			
-			int suffix = 0;
+			int s=0;
 			while(rs.next()) {
-			suffix++;
-			request.setAttribute("profile1"+suffix, rs.getString(1));
-			request.setAttribute("profile2"+suffix, rs.getString(2));
-			request.setAttribute("dateTime"+suffix, rs.getTimestamp(4).toString());
-			request.setAttribute("location"+suffix, rs.getString(5));
-			request.setAttribute("booking"+suffix, rs.getInt(6));
-			request.setAttribute("comments"+suffix, rs.getString(7));
-			request.setAttribute("u1Rating"+suffix, rs.getInt(8));
-			request.setAttribute("u2Rating"+suffix, rs.getInt(9));
-			request.setAttribute("geoLoc"+suffix, rs.getString(10));
+				s++;
+				request.setAttribute("likee"+s, rs.getString(1));
 			}
-			request.setAttribute("length", suffix);
-			
-			
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/SeeDates.jsp");
-			dispatcher.forward(request,response);
-			
+			request.setAttribute("length", s);
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/FavResults.jsp");
+			dispatcher.forward(request, response);
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			request.getSession().setAttribute("errorMsg", "You entered some wrong values. Please try again");
 			response.sendRedirect("UserHome.jsp");
+			
 		}
+		
 	}
 
 	/**

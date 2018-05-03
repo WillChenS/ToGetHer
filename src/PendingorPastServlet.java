@@ -77,7 +77,7 @@ public class PendingorPastServlet extends HttpServlet {
 			
 				
 		}catch(Exception e) {
-			
+			response.sendRedirect("SearchResults.jsp");
 		}
 	}
 
