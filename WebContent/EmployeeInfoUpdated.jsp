@@ -11,10 +11,10 @@
 
 ${returnStatement}
 <br><br>
-<form method="get" action="SelectCustomerServlet">
+<form method="get" action="SelectEmployeeServlet">
     <button type="submit">Continue Editing</button>
 </form>
-<form method="get" action="CustRepHome.jsp">
+<form method="get" action="ManagerHome.jsp">
     <button type="submit">Home</button>
 </form>
 

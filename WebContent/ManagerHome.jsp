@@ -11,7 +11,7 @@
 <h1>Manager Home</h1>
 	<form action="recordDate.jsp" method= "post">
 
-	<button type="submit" formaction="MailingList" method="get">Add </button><br>
+	<button type="submit" formaction="SelectEmployeeServlet" method="get">Add, Edit, and Delete Employee Info</button><br>
 		<br>
 		<button type="submit" formaction="SaleReportServlet" method="get">Obtain a sales report for a particular month</button><br>
 		<br>

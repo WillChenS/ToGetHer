@@ -18,7 +18,6 @@
 	</form>
 	
 	
-	Dates:
 <table>
 	<thead>
 		<tr>

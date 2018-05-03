@@ -12,7 +12,7 @@
 <h1>Sale Report </h1>
 	<form action="SaleReportServlet" method= "post">
 	<pre>
-	<input type = "text" name = "profile" placeholder = "Enter a ingeter for month(1-12)"/>
+	<input type = "text" name = "profile" placeholder = "Enter a integer for month(1-12)"/>
 	<input type = "submit" value = "Enter"/>
 	</pre>
 	</form>

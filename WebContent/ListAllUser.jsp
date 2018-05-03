@@ -13,6 +13,9 @@
 	<thead>
 		<tr>
 			<th>SSN</th>
+			<th>PPP</th>
+			<th>Rating</th>
+			<th>DateOfLastAct</th>
 			<th>Password</th>
 			<th>FirstName</th>
 			<th>LastName</th>
@@ -29,6 +32,9 @@
 		<c:forEach var="ListAllUserEntry" items="${ListAllUserList}">
 		<tr>
 			<td><c:out value = "${ListAllUserEntry.getSSN()}"/></td>
+			<td><c:out value = "${ListAllUserEntry.getPPP()}"/></td>
+			<td><c:out value = "${ListAllUserEntry.getRating()}"/></td>
+			<td><c:out value = "${ListAllUserEntry.getDateOfLastAct()}"/></td>
 			<td><c:out value = "${ListAllUserEntry.getPassword()}"/></td>
 			<td><c:out value = "${ListAllUserEntry.getFirstName()}"/></td>
 			<td><c:out value = "${ListAllUserEntry.getLastName()}"/></td>
