@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -25,6 +26,7 @@
 		int u1r = (Integer)request.getAttribute("u1Rating"+c);
 		int u2r = (Integer)request.getAttribute("u2Rating"+c);
 		
+		String[] splitDt = dt.split(" ");
 		%> Profile 1: <%=p1%> <br>
 		Profile 2: <%=p2 %> <br>
 		Date and Time: <%=dt %> <br>
@@ -32,10 +34,14 @@
 		Booking Fee: <%=bfee %> <br>
 		User 1 Rating: <%=u1r %> <br> 
 		User 2 Rating:  <%=u2r %> <br> 
-		<form method = "GET" action = "CommentServlet">
-		Comment: <input type="string" name="comment" value = "\0"> 
-
-		<input type="submit" value="Submit">
+		
+		<form method = "GET" action = "DeleteDateServlet">
+		<input type="hidden" value=<%=p1%> name = "profile1">
+		<input type="hidden" value=<%=p2%> name = "profile2">
+		<input type="hidden" value=<%=splitDt[0]%> name = "date">
+		<input type="hidden" value=<%=splitDt[1]%> name = "time">
+		<input type="submit" value="Cancel"></button>
+		</form>
 		<hr>
 		<% 
 	}};
@@ -43,10 +49,6 @@
 
 	<form action="recordDate.jsp" method= "post">
 	<button type= "submit" formaction="recordDate.jsp" method="get"> Set Up New Date </button><br>
-	<hr>
-	<button type= "submit" formaction="Like.jsp" method="get"> Cancel Date </button><br>
-	<hr>
-	<button type= "submit" formaction="Like.jsp" method="get"> Cancel Date </button><br>
 	<hr>
 	</form>
 	
