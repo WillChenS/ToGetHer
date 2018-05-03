@@ -27,8 +27,14 @@ Your session ID:
 	<hr>
 	<button type= "submit" formaction="StatsServlet" method="get"> See Statistics </button><br>
 	<hr>
-	
-	
+	<button type= "submit" formaction="MostActiveProfiles" method="get"> See Most Active Profiles </button><br>
+	<hr>
+	<button type= "submit" formaction="HighRatedProfiles" method="get"> See Most highly rated profilesMost highly rated profiles </button><br>
+	<hr>
+	<button type= "submit" formaction="PopularGeoDate" method="get"> See Popular geo-date locations </button><br>
+	<hr>
+	<button type= "submit" formaction="PersonalizedSuggestion" method="get"> See Personalized date suggestion list </button><br>
+	<hr>
 	</form>
 </div>	
 </body>

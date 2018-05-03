@@ -6,8 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>ToGetHer Dating</title>
 </head>
-<body style="font-size: 12pt; text-align: center" bgcolor="#FBD6CB">  style="font-size: 12pt; text-align: center" bgcolor="#FBD6CB"> 
-    <span style="font-family: Arial"><strong><span style="font-size: 20pt">Login in Page</span><br />
+<body style="font-size: 12pt; text-align: center" bgcolor="#FBD6CB">   
+    <span style="font-family: Arial"><strong><span style="font-size: 20pt">Login in Error</span><br />
         <br />
   
 
