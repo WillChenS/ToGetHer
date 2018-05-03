@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>List All Users</title>
 </head>
-<body style="font-size: 12pt; text-align: center" bgcolor="#FBD6CB"> >
+<body style="font-size: 12pt; text-align: center" bgcolor="#FBD6CB">
 <h3>List All Users</h3>
 <table>
 	<thead>

@@ -5,14 +5,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Customer Info Update Landing</title>
+<title>User Deletiong Landing</title>
 </head>
 <body style="font-size: 12pt; text-align: center" bgcolor="#FBD6CB">
 
 ${returnStatement}
 <br><br>
-<form method="get" action="SelectEmployeeServlet">
-    <button type="submit">Continue Editing</button>
+<form method="get" action="DeleteUser">
+    <button type="submit">Delete Another Account</button>
 </form>
 <form method="get" action="ManagerHome.jsp">
     <button type="submit">Home</button>

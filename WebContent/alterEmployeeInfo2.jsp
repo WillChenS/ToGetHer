@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Add, Edit, or Delete Customer Info</title>
 </head>
-<body style="font-size: 12pt; text-align: center" bgcolor="#FBD6CB"> >
+<body style="font-size: 12pt; text-align: center" bgcolor="#FBD6CB">
 
 <h1>Edit Employee Info</h1>
     

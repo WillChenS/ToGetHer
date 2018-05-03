@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Employee Directory</title>
 </head>
-<body style="font-size: 12pt; text-align: center" bgcolor="#FBD6CB"> >
+<body style="font-size: 12pt; text-align: center" bgcolor="#FBD6CB">
 <h3>Employee Directory</h3>
 <table>
 	<thead>

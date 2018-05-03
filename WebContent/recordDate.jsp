@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Record a Date</title>
 </head>
-<body style="font-size: 12pt; text-align: center" bgcolor="#FBD6CB"> >
+<body style="font-size: 12pt; text-align: center" bgcolor="#FBD6CB">
 <h1>Record a Date</h1>
 
 <form action="RecordDate" method= "post">

@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>ToGetHer Manager Home</title>
 </head>
-<body style="font-size: 12pt; text-align: center" bgcolor="#FBD6CB"> >
+<body style="font-size: 12pt; text-align: center" bgcolor="#FBD6CB"> 
 
 <h1>Manager Home</h1>
 	<form action="recordDate.jsp" method= "post">
@@ -38,6 +38,8 @@
 		<button type="submit" formaction="HighRatedCusServlet" method="get">Produce a list of the highest-rated customers</button><br>
 		<br>
 		<button type="submit" formaction="HighRatedDateServlet" method="get">Produce a list of the highest-rated calendar dates to have a date on</button><br>
+		<br>
+		<button type="submit" formaction="DeleteUser" method="get">Delete an Account</button><br>
 		<br>
 		
 </body>
