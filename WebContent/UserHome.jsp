@@ -31,7 +31,7 @@ Your session ID:
 	<hr>
 	<button type= "submit" formaction="PersonalizedSuggestion" method="get"> See Personalized Date Suggestion List </button><br>
 	<hr>
-	<button type= "submit" formaction="Welcome.html" method="get"> Logout </button><br>
+	<button type= "submit" formaction="Logout" method="get"> Logout </button><br>
 	<hr>
 	</form>
 	<h5><c:out value="${sessionScope.errorMsg}"/>	</h5>
