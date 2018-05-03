@@ -25,7 +25,7 @@
 		String comments = (String)request.getAttribute("comments"+c);
 		int u1r = (Integer)request.getAttribute("u1Rating"+c);
 		int u2r = (Integer)request.getAttribute("u2Rating"+c);
-		
+		System.out.println(comments);
 		String[] splitDt = dt.split(" ");
 		%> Profile 1: <%=p1%> <br>
 		Profile 2: <%=p2 %> <br>
@@ -34,14 +34,27 @@
 		Booking Fee: <%=bfee %> <br>
 		User 1 Rating: <%=u1r %> <br> 
 		User 2 Rating:  <%=u2r %> <br> 
+		Comments : <br> <%=comments %> <br>
+		
+		<form method = "GET" action = "CommentServlet">
+		<input type="hidden" value=<%=p1%> name = "profile1">
+		<input type="hidden" value=<%=p2%> name = "profile2">
+		<input type="hidden" value=<%=splitDt[0]%> name = "date">
+		<input type="hidden" value=<%=splitDt[1]%> name = "time">
+		<input type="hidden" value<%=comments %> name = "prevCmnts">
+		<input type="text" value="" name = "newCmnt">
+		<input type="submit" value="Comment">
+		</form>
 		
 		<form method = "GET" action = "DeleteDateServlet">
 		<input type="hidden" value=<%=p1%> name = "profile1">
 		<input type="hidden" value=<%=p2%> name = "profile2">
 		<input type="hidden" value=<%=splitDt[0]%> name = "date">
 		<input type="hidden" value=<%=splitDt[1]%> name = "time">
-		<input type="submit" value="Cancel">
+		<input type="submit" value="Cancel Date">
 		</form>
+
+		<hr>
 		<hr>
 		<% 
 	}};

@@ -42,20 +42,23 @@ public class RecordDate extends HttpServlet {
 		doGet(request, response);
 		Connection c = Database.getCon();
 		String employeeID = null;
+		String commentor = null;
 		String profile1;
 		String profile2;
 		if(request.getSession().getAttribute("Role").equals("Customer")) {
 			profile1 = request.getSession().getAttribute("ID").toString();
+			commentor = profile1 + ": ";
 		}
 		else {
 			profile1 = request.getParameter("profile1");
 			employeeID = request.getSession().getAttribute("ID").toString();
+			commentor = "CustomerRep: ";
 		}
 		profile2 = request.getParameter("profile2");
 		String datetime = request.getParameter("datetime");
 		String location = request.getParameter("location");
 		String bookingFee = request.getParameter("bookingfee");
-		String comments = request.getParameter("comments");
+		String comments = commentor+ request.getParameter("comments") + " <br> ";
 		String user1rating = request.getParameter("user1rating");
 		String user2rating = request.getParameter("user2rating");
 		String query = "INSERT INTO date (Profile1, Profile2," + 
