@@ -1,10 +1,6 @@
 
 
 import java.io.IOException;
-
-import java.time.format.DateTimeFormatter;  
-import java.time.LocalDateTime;    
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -48,8 +44,6 @@ public class FinishEditEmployeeServlet extends HttpServlet {
 		String selectedCol = request.getParameter("selectedCol");
 		String newValue = request.getParameter("newValue");
 		String toDelete = request.getParameter("delete");
-		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-mm-dd HH:mm:ss");
-		String updateTime = dtf.format(LocalDateTime.now());
 		Connection c = Database.getCon();
 		String query;
 		if (toDelete != null && toDelete.equals("DELETE")) {
