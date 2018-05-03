@@ -5,8 +5,10 @@
 <meta charset="ISO-8859-1">
 <title> Create new account </title>
 </head>
-<body>
-	<h3> Get Started with an Account </h3>
+<body style="font-size: 12pt; text-align: left" bgcolor="#FBD6CB"> 
+    <span style="font-family: Arial"><strong><span style="font-size: 20pt">Get Started with an Account</span><br />
+        <br />
+
 	<h5><c:out value="${sessionScope.Msg}"/>	</h5>
 	
 	
