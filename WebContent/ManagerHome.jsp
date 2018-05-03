@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>ToGetHer Manager Home</title>
 </head>
-<body>
+<body style="font-size: 12pt; text-align: center" bgcolor="#FBD6CB"> >
 
 <h1>Manager Home</h1>
 	<form action="recordDate.jsp" method= "post">

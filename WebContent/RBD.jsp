@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Search Revenue By Date</title>
 </head>
-<body>
+<body style="font-size: 12pt; text-align: center" bgcolor="#FBD6CB"> >
 
 <h1>Search Revenue By Date</h1>
 	<form action="RevenueByDateServlet" method= "post">

@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title> ToGetHer Home </title>
 </head>
-<body>
+<body style="font-size: 12pt; text-align: center" bgcolor="#FBD6CB"> >
 <h2>Welcome to ToGetHer!</h2>
 Your session ID:
 <c:out value="${sessionScope.ID}"/>

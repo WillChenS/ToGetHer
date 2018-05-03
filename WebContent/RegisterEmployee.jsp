@@ -5,7 +5,7 @@
 <meta charset="ISO-8859-1">
 <title> Register a New Employee </title>
 </head>
-<body style="font-size: 12pt; text-align: left"> 
+<body style="font-size: 12pt; text-align: center" bgcolor="#FBD6CB">  style="font-size: 12pt; text-align: left"> 
     <span style="font-family: Arial"><strong><span style="font-size: 20pt">Register a New Employee</span><br />
         <br />
 

@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body>
+<body style="font-size: 12pt; text-align: center" bgcolor="#FBD6CB"> >
 <div style = "border:1px solid $D0D0D0;width:400px;padding:10px;" >
 	<h3> Pick someone to like. Enter their Profile ID </h3s>
 	<form method = "GET" action = "LikeServlet">
