@@ -23,9 +23,9 @@ Your session ID:
 	<hr>
 	<button type= "submit" formaction="Like.jsp" method="get"> Like Profile </button><br>
 	<hr>
-	<button type= "submit" formaction="ReferServlet" method="get"> Refer Date </button><br>
+	<button type= "submit" formaction="Refer.jsp" method="get"> Refer Date </button><br>
 	<hr>
-	<button type= "submit" formaction="StatsServlet" method="get"> Set Up A Date </button><br>
+	<button type= "submit" formaction="StatsServlet" method="get"> See Statistics </button><br>
 	<hr>
 	
 	

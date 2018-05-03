@@ -12,7 +12,7 @@
 <h1>List Of Dates</h1>
 	<form action="ListOfDateServlet2" method= "post">
 	<pre>
-	<input type = "text" name = "profile" placeholder = "Enter Name"/>
+	<input type = "text" name = "profile" placeholder = "Enter ProfileID"/>
 	<input type = "submit" value = "Enter"/>
 	</pre>
 	</form>
