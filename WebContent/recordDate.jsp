@@ -12,8 +12,13 @@
 
 <form action="RecordDate" method= "post">
 	<pre>
+	<% if(request.getSession().getAttribute("Role").toString().equals("Customer")){
+		%> Profile: <input type = "text" name = "profile2"/>
+	<% }else{
+		%>
 	Profile1: <input type = "text" name = "profile1"/>
 	Profile2: <input type = "text" name = "profile2"/>
+	<% } %>
 	Date/Time (in <i>YYYY-MM-DD hh:mm:ss</i>): <input type = "text" name = "datetime"/>
 	Location: <input type = "text" name = "location"/>
 	Booking Fee: <input type = "text" name = "bookingfee"/>

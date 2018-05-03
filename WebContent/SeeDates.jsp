@@ -24,7 +24,7 @@
 		String comments = (String)request.getAttribute("comments"+c);
 		int u1r = (Integer)request.getAttribute("u1Rating"+c);
 		int u2r = (Integer)request.getAttribute("u2Rating"+c);
-		String gloc = (String)request.getAttribute("geoLoc"+c);
+		
 		%> Profile 1: <%=p1%> <br>
 		Profile 2: <%=p2 %> <br>
 		Date and Time: <%=dt %> <br>
@@ -32,14 +32,17 @@
 		Booking Fee: <%=bfee %> <br>
 		User 1 Rating: <%=u1r %> <br> 
 		User 2 Rating:  <%=u2r %> <br> 
-		GeoLocation: <%=gloc %>
+		<form method = "GET" action = "CommentServlet">
+		Comment: <input type="string" name="comment" value = "\0"> 
+
+		<input type="submit" value="Submit">
 		<hr>
 		<% 
 	}};
 	%>
 
 	<form action="recordDate.jsp" method= "post">
-	<button type= "submit" formaction="SearchProfile.jsp" method="get"> Set Up New Date </button><br>
+	<button type= "submit" formaction="recordDate.jsp" method="get"> Set Up New Date </button><br>
 	<hr>
 	<button type= "submit" formaction="Like.jsp" method="get"> Cancel Date </button><br>
 	<hr>

@@ -41,9 +41,17 @@ public class RecordDate extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 		Connection c = Database.getCon();
-		String employeeID = request.getSession().getAttribute("ID").toString();
-		String profile1 = request.getParameter("profile1");
-		String profile2 = request.getParameter("profile2");
+		String employeeID = null;
+		String profile1;
+		String profile2;
+		if(request.getSession().getAttribute("Role").equals("Customer")) {
+			profile1 = request.getSession().getAttribute("ID").toString();
+		}
+		else {
+			profile1 = request.getParameter("profile1");
+			employeeID = request.getSession().getAttribute("ID").toString();
+		}
+		profile2 = request.getParameter("profile2");
 		String datetime = request.getParameter("datetime");
 		String location = request.getParameter("location");
 		String bookingFee = request.getParameter("bookingfee");
