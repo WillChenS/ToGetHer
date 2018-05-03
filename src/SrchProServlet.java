@@ -49,23 +49,27 @@ public class SrchProServlet extends HttpServlet {
 			for(int i=0;i<toCopy.length;i++) {
 				hobArr[i] = toCopy[i].trim();
 			}
-			String currGender = request.getSession().getAttribute("ID").toString();
+			String currPro = request.getSession().getAttribute("ID").toString();
 			
 			try {
 				String sql = "SELECT ProfileID, Height, Weight, HairColor, Age "
 							+"FROM (SELECT * FROM profile NATURAL JOIN Hobbies WHERE M_F NOT IN "
 							+ "(SELECT M_F FROM profile WHERE ProfileID = ?)) as S "
-							+ "WHERE height = ? OR weight = ? OR hairColor = ? OR Hobbies = ? "
-							+ "OR Hobbies=? OR Hobbies=? "
+							+ "WHERE (height = ? OR weight = ? OR hairColor = ? OR Hobbies = ? "
+							+ "OR Hobbies=? OR Hobbies=?) AND "
+							+ "((SELECT DatingAgeRangeStart FROM profile WHERE ProfileID = ?) < Age AND "
+							+ "(SELECT DatingAgeRangeEnd From profile WHERE ProfileID = ?) > Age) "
 							+ "Group By ProfileID";
 				PreparedStatement ps = c.prepareStatement(sql);
-				ps.setString(1, currGender);
+				ps.setString(1, currPro);
 				ps.setInt(2, Integer.parseInt(height));
 				ps.setInt(3, Integer.parseInt(weight));
 				ps.setString(4, hairColor);
 				ps.setString(5, hobArr[0]);
 				ps.setString(6, hobArr[1]);
 				ps.setString(7, hobArr[2]);
+				ps.setString(8, currPro);
+				ps.setString(9, currPro);
 				
 				ResultSet rs = ps.executeQuery();
 				

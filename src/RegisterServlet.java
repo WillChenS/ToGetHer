@@ -132,9 +132,7 @@ public class RegisterServlet extends HttpServlet {
 			ps.setTimestamp(10, sqlDT);
 			ps.setTimestamp(11, sqlDT);
 			ps.setInt(12, Integer.parseInt(age));
-			System.out.println("Final insert Statement: \n" + ps);
 			rowcount = ps.executeUpdate();
-			System.out.println("Row count affected= " + rowcount);
 			c.commit();
 			
 			response.sendRedirect("Login.jsp");
