@@ -17,7 +17,7 @@ Your session ID:
 <form action="recordDate.jsp" method= "post">
 	<button type= "submit" formaction="SearchProfile.jsp" method="get"> Search Profiles </button><br>
 	<hr>
-	<button type= "submit" formaction="SeeDateServlet" method="get"> See Date </button><br>
+	<button type= "submit" formaction="SeeDateServlet" method="get"> See Dates </button><br>
 	<hr>
 	<button type= "submit" formaction="GeoServlet" method="get"> Set Up A Geo Date </button><br>
 	<hr>
