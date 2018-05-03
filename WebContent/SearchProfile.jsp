@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -14,8 +15,11 @@
 		Height: <input type="number" name="height" value = ""> <hr>
 		Weight: <input type="number" name="weight" value = ""> <hr>
 		Hair color: <input type="text" name= "hairColor" value =""> <hr>
+		Hobbies: <input type="text" name= "hobbies" value =""> <hr>
 		
 		<input type="submit" value="Submit">
+		
+
 	</form>
 	</div>
 

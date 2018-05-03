@@ -17,11 +17,11 @@ Your session ID:
 <form action="recordDate.jsp" method= "post">
 	<button type= "submit" formaction="SearchProfile.jsp" method="get"> Search Profiles </button><br>
 	<hr>
-	<button type= "submit" formaction="DateServlet" method="get"> Set Up A Date </button><br>
+	<button type= "submit" formaction="SeeDateServlet" method="get"> See Date </button><br>
 	<hr>
 	<button type= "submit" formaction="GeoServlet" method="get"> Set Up A Geo Date </button><br>
 	<hr>
-	<button type= "submit" formaction="CnclDateServlet" method="get"> Cancel Date </button><br>
+	<button type= "submit" formaction="Like.jsp" method="get"> Like Profile </button><br>
 	<hr>
 	<button type= "submit" formaction="ReferServlet" method="get"> Refer Date </button><br>
 	<hr>
