@@ -38,7 +38,6 @@ public class SrchProServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 			Connection c = Database.getCon();
-			System.out.println("Connected");
 			
 		
 			String height = request.getParameter("height");
@@ -78,7 +77,7 @@ public class SrchProServlet extends HttpServlet {
 					request.setAttribute("Weight"+s, rs.getInt(3));
 					request.setAttribute("HairColor"+s, rs.getString(4));	
 					request.setAttribute("Age"+s, rs.getInt(5));
-					System.out.println(rs.getString(1));
+				
 				}
 				request.setAttribute("length", s);
 				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/SearchResults.jsp");

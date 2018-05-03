@@ -40,7 +40,7 @@
 		<input type="hidden" value=<%=p2%> name = "profile2">
 		<input type="hidden" value=<%=splitDt[0]%> name = "date">
 		<input type="hidden" value=<%=splitDt[1]%> name = "time">
-		<input type="submit" value="Cancel"></button>
+		<input type="submit" value="Cancel">
 		</form>
 		<hr>
 		<% 

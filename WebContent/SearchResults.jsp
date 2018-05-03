@@ -26,6 +26,19 @@
 		Weight: <%=weight %> <br>
 		Hair Color: <%=hairColor %>	<br>
 		Age: <%=age %> <br>
+		
+		<form method = "GET" action = "PendingorPastServlet">
+		<input type="hidden" value=<%=pro%> name = "profile">
+		<input type="hidden" value="pending" name = "choose">
+		<input type="submit" value="Pending Dates">
+		</form>
+		
+		<form method = "GET" action = "PendingorPastServlet">
+		<input type="hidden" value=<%=pro%> name = "profile">
+		<input type="hidden" value="past" name = "choose">
+		<input type="submit" value="Past Dates">
+		</form>
+		
 		<hr>
 		<% 
 	}};
