@@ -43,9 +43,9 @@ public class login extends HttpServlet {
 		doGet(request, response);
 		String uname = request.getParameter("uname");
 		String pass = request.getParameter("pass");
-		try {
 		Connection c = Database.getCon();
-	
+		
+		try {
 		PreparedStatement ps = null;
 		String nextPage = null;
 		String query = "SELECT P.Password FROM Profile PR, Person P WHERE PR.ProfileID = ? AND PR.OwnerSSN = P.SSN AND P.Password = ?";
@@ -76,11 +76,13 @@ public class login extends HttpServlet {
 						nextPage = "ManagerHome.jsp";
 						request.getSession().setAttribute("Role","Manager");
 						request.getSession().setAttribute("ID", uname);
+						response.sendRedirect(nextPage);
 					}
 					else {
 						nextPage = "CustRepHome.jsp";
 						request.getSession().setAttribute("Role","Employee");
 						request.getSession().setAttribute("ID", uname);
+						response.sendRedirect(nextPage);
 					}
 				}
 			}
@@ -88,8 +90,9 @@ public class login extends HttpServlet {
 				nextPage = "UserHome.jsp";
 				request.getSession().setAttribute("Role","Customer");
 				request.getSession().setAttribute("ID", uname);
+				response.sendRedirect(nextPage);
 			}
-			response.sendRedirect(nextPage);
+			//response.sendRedirect(nextPage);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

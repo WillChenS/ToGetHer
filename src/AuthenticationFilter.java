@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet Filter implementation class AuthenticationFilter
  */
-@WebFilter("/*")
+@WebFilter("/dawk")
 public class AuthenticationFilter implements Filter {
 
     /**
@@ -49,6 +49,9 @@ public class AuthenticationFilter implements Filter {
 				path.equals("/DatabaseProject/MainPage.jpg") ||
 				path.equals("/DatabaseProject/index.jsp") ||
 				path.equals("/DatabaseProject/loginfail.jsp") ||
+				path.equals("/DatabaseProject/Logout.java") ||
+				path.equals("/DatabaseProject/login.java") ||
+				path.equals("/DatabaseProject/Database.java") ||
 				path.equals("/DatabaseProject/")) {
 		    chain.doFilter(request, response); // Just continue chain.
 		} else {
