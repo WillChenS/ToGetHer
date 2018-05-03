@@ -38,8 +38,6 @@ public class CommentServlet extends HttpServlet {
 		String dateTime = request.getParameter("date") + " " + request.getParameter("time");
 		String prevCmnts = request.getParameter("prevCmnts");
 		String newCmnt = request.getParameter("newCmnt");
-		System.out.println("prev: " + prevCmnts);
-		System.out.println("new: " + newCmnt);
 		String sql = "UPDATE date SET Comments = ? "
 				+ "WHERE Profile1 = ? AND Profile2 = ? AND Date_Time = ?";
 		try {
