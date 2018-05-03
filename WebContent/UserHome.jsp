@@ -25,8 +25,6 @@ Your session ID:
 	<hr>
 	<button type= "submit" formaction="Refer.jsp" method="get"> Refer Date </button><br>
 	<hr>
-	<button type= "submit" formaction="StatsServlet" method="get"> See Statistics </button><br>
-	<hr>
 	<button type= "submit" formaction="MostActiveProfiles" method="get"> See Most Active Profiles </button><br>
 	<hr>
 	<button type= "submit" formaction="HighRatedProfiles" method="get"> See Most highly rated profilesMost highly rated profiles </button><br>
