@@ -35,14 +35,15 @@
 		User 1 Rating: <%=u1r %> <br> 
 		User 2 Rating:  <%=u2r %> <br> 
 		Comments : <br> <%=comments %> <br>
+		<% System.out.println("JSP comment: "+ comments); %>
 		
 		<form method = "GET" action = "CommentServlet">
 		<input type="hidden" value=<%=p1%> name = "profile1">
 		<input type="hidden" value=<%=p2%> name = "profile2">
 		<input type="hidden" value=<%=splitDt[0]%> name = "date">
 		<input type="hidden" value=<%=splitDt[1]%> name = "time">
-		<input type="hidden" value<%=comments %> name = "prevCmnts">
-		<input type="text" value="" name = "newCmnt">
+		<input type="hidden" value="<%=comments%>" name = "prevCmnts">
+		<input type="text" name = "newCmnt" value="">
 		<input type="submit" value="Comment">
 		</form>
 		

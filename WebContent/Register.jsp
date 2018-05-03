@@ -5,15 +5,12 @@
 <meta charset="ISO-8859-1">
 <title> Create new account </title>
 </head>
-<body style="font-size: 12pt; text-align: center" bgcolor="#FBD6CB">  style="font-size: 12pt; text-align: left" bgcolor="#FBD6CB"> 
+<body style="font-size: 12pt; text-align: center" bgcolor="#FBD6CB"> 
     <span style="font-family: Arial"><strong><span style="font-size: 20pt">Get Started with an Account</span><br />
         <br />
 
 	<h5><c:out value="${sessionScope.Msg}"/>	</h5>
-	
-	
-	<div style = "border:1px solid $D0D0D0;width:400px;padding:10px;" >
-	
+
 	<form method = "GET" action = "RegisterServlet">
 		Account Number: <input type = "number" name = "userName" value = "">
 		<br>
@@ -57,9 +54,9 @@
 		<br>
 		Geo Range: <input type="number" name="geoRange" value="">
 		<br>
-		Height: <input type="number" name="height" value="">
+		Height: <input type="number" name="height" value="">	<h6> In feet</h6>
 		<br>
-		Weight: <input type="number" name="weight" value="">
+		Weight: <input type="number" name="weight" value="">	<h6> In pounds</h6>
 		<br>
 		Hair Color: <input type="text" name="hairColor" value="">
 		<br>
@@ -69,8 +66,6 @@
 		<input type="submit" value="Submit">
 	</form>
 	
-	
-	</div> 
 
 </body>
 </html>
