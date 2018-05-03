@@ -46,12 +46,19 @@ public class DatedServlet extends HttpServlet {
 		doGet(request, response);
 		Connection c = Database.getCon();
 		String profile = request.getParameter("profile");
-		String query = "SELECT Profile2 AS DatedPerson FROM Date D\r\n" + 
-				"where D.profile1 =? Group by profile2";
+		String query = "SELECT D.profile2 as ProfileID1 FROM Date D\r\n" + 
+				"where D.profile1 =? \r\n" + 
+				"Union (\r\n" + 
+				"\r\n" + 
+				"SELECT D.profile1 as ProfileID1 FROM Date D\r\n" + 
+				"where D.profile2 =? \r\n" + 
+				"\r\n" + 
+				")\r\n" ;
 		PreparedStatement ps = null;
 		try {
 			ps = c.prepareStatement(query);
 			ps.setString(1, profile);
+			ps.setString(2, profile);
 			ResultSet rs = ps.executeQuery();
 			ArrayList<DatedInfo> listing = new ArrayList<DatedInfo>();
 			while(rs.next()) {

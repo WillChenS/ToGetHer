@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Date Suggestion List</title>
 </head>
-<body>
+<body style="font-size: 12pt; text-align: center" bgcolor="#FBD6CB">
 
 <h1>Date Suggestion Generator</h1>
 	<form action="SuggestDates" method= "post">

@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>List of the highest-rated Calendar Dates</title>
 </head>
-<body>
+<body style="font-size: 12pt; text-align: center" bgcolor="#FBD6CB">
 <h3>List of the highest-rated Calendar Dates</h3>
 <table>
 	<thead>

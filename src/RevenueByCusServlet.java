@@ -1,5 +1,3 @@
-
-
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -49,11 +47,11 @@ public class RevenueByCusServlet extends HttpServlet {
 		String profile = request.getParameter("profile");
 		String query = "SELECT * \r\n" + 
 				"FROM Date D\r\n" + 
-				"WHERE D.Profile1 =?";
+				"WHERE D.Profile1 =? or D.Profile2 = ?";
 		PreparedStatement ps = null;
 		try {
 			ps = c.prepareStatement(query);
-			ps.setString(1, profile);
+			ps.setString(1, profile);ps.setString(2, profile);
 			ResultSet rs = ps.executeQuery();
 			ArrayList<SaleReportInfo> listing = new ArrayList<SaleReportInfo>();
 			while(rs.next()) {
@@ -116,4 +114,3 @@ public class SaleReportInfo {
 	}
 }
 }
-
