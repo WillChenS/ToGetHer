@@ -5,7 +5,11 @@
 <meta charset="ISO-8859-1">
 <title> Create new account </title>
 </head>
+<<<<<<< HEAD
+<body style="font-size: 12pt; text-align: center" bgcolor="#FBD6CB">  : 
+=======
 <body style="font-size: 12pt; text-align: center" bgcolor="#FBD6CB"> 
+>>>>>>> 9fa0dddf216e442eaee9994af7f677425db58c10
     <span style="font-family: Arial"><strong><span style="font-size: 20pt">Get Started with an Account</span><br />
         <br />
 
