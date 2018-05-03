@@ -65,6 +65,7 @@ public class FinishEditProfileServlet extends HttpServlet {
 			ps = c.prepareStatement(query);
 			ps.setString(1, updateTime);
 			ps.executeUpdate();
+			c.commit();
 			request.setAttribute("returnStatement", "Successfully updated.");
 			request.getRequestDispatcher("/custInfoUpdated.jsp").forward(request, response);
 		} catch (SQLException e) {
