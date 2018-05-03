@@ -55,6 +55,7 @@ public class FinishEditEmployeeServlet extends HttpServlet {
 			ps = c.prepareStatement(query);
 			ps.setString(1, newValue);
 			ps.executeUpdate();
+			c.commit();
 			request.setAttribute("returnStatement", "Successfully updated.");
 			request.getRequestDispatcher("/EmployeeInfoUpdated.jsp").forward(request, response);
 		} catch (SQLException e) {
