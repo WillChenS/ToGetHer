@@ -17,6 +17,7 @@ Manager-Level Transactions
   Produce a list of the highest-rated calendar dates to have a date on
 
 Customer-Representative-Level Transactions
+
   Customer Representatives should be thought of as date "reservation agents" and should be able to:
 
   Record a date
@@ -25,6 +26,7 @@ Customer-Representative-Level Transactions
   Produce a list of profiles as date suggestions for a given profile (based on that profile's past dates)
 
 Customer-Level Transactions
+
   Customers with active profiles should be thought of as online daters and should be able to easily browse and search for profiles of interest and set up dates. In particular, they should be able to:
 
   Make a date with another customer profile
